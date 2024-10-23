@@ -1,0 +1,10 @@
+pandas==2.*
+numpy==2.*
+nbformat==5.*
+scikit-learn==1.*
+matplotlib==3.*
+plotly==5.*
+seaborn==0.*
+PyYAML==6.*
+xgboost
+lightgbm==4.*
