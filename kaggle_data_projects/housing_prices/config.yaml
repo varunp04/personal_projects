@@ -1,0 +1,116 @@
+DATA_FOLDER: data_folder/
+
+TRAIN_DATA_FILE_NAME: train.csv
+TEST_DATA_FILE_NAME: test.csv
+
+
+ARTIFACT_FOLDER: artifacts/
+
+CATEGORICAL_ONE_HOT_ENCODE:
+  - MSSubClass
+  - MSZoning
+  - Street
+  - LandContour
+  - Utilities
+  - Neighborhood
+  - BldgType
+  - HouseStyle
+  - Exterior1st
+  - Exterior2nd
+  - BsmtFinType1
+  - Heating
+  - CentralAir
+  - Electrical
+  - Functional
+  - GarageType
+  - PavedDrive
+  - MiscFeature
+  - SaleType
+  - SaleCondition
+  - ExterQual
+  - ExterCond
+  - BsmtQual
+  - BsmtCond
+  - HeatingQC
+  - KitchenQual
+  - GarageCond
+
+
+CATEGORICAL_LABEL_ENCODE:
+  - GarageQual
+
+
+NUMERICAL_COLUMNS:
+  - LotArea
+  - TotalBsmtSF
+  - FullBath
+  - HalfBath
+  - KitchenAbvGr
+  - BedroomAbvGr 
+  - Fireplaces
+  - TotRmsAbvGrd
+  - GarageCars
+  - WoodDeckSF
+  - OpenPorchSF
+  - EnclosedPorch
+  - 3SsnPorch
+  - ScreenPorch
+  - PoolArea
+  - OverallQual
+  - OverallCond 
+
+DATE_COLUMNS:
+  - YearBuilt
+  - YearRemodAdd
+
+
+COLUMNS_WITH_NULLS:
+  - BsmtFinType1
+  - Electrical
+  - GarageType
+  - MiscFeature
+  - BsmtQual
+  - BsmtCond
+  - GarageQual
+  - GarageCond
+
+HIGH_CORRELATED_COLUMN:
+  - LotArea
+  - TotalBsmtSF
+  - HalfBath
+  - Fireplaces
+  - TotRmsAbvGrd
+  - GarageCars
+  - WoodDeckSF
+  - OpenPorchSF
+  - YearBuilt
+
+
+TARGET_COLUMN: SalePrice
+
+
+decisiontree: 
+  max_depth: [3, 5]
+  min_samples_split: [2, 5]
+  max_features: ["auto", "sqrt"]
+
+
+randomforest:
+  n_estimators: [50, 100, 500]
+  max_depth: [10, 20]
+
+ 
+xgboost:
+  n_estimators: [50, 100, 500]
+  learning_rate: [0.01, 0.1]
+  max_depth: [3, 5]
+
+lightgbm:
+  n_estimators: [50, 100, 500]
+  learning_rate: [0.01, 0.1]
+  num_leaves: [20, 30, 40]
+
+ridge:
+  alpha: [0.1, 0.5, 1.0]
+  solver: ["auto", "svd"]
+
